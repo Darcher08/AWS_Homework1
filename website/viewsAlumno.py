@@ -6,6 +6,10 @@ from .models import Alumno, alumnos, alumno_to_dict, actualizarID
 
 #create all the routes that the REST api gonna use
 
+@viewsA.route('/')
+def home():
+    return '<p>AWS Primera Entrega</p><br><p>Luis Palma</p>'
+
 #! GET ALUMNOS
 @viewsA.route('/alumnos', methods=['GET'])
 def getAlumnos():
