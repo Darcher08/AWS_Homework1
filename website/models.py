@@ -15,18 +15,10 @@ class Profesor():
         self.horasClase = horasClase
 
 
-alumnos = [
-    Alumno(1, "Juan", "Pérez", "A001", 9.5),
-    Alumno(2, "Ana", "García", "A002", 8.7),
-    Alumno(3, "Luis", "Martínez", "A003", 9.0)
-]
+alumnos = []
 
 
-profesores = [
-
-    Profesor(1, "P001", "Carlos", "López", 20),
-    Profesor(2, "P002", "María", "Fernández", 15)
-]
+profesores = []
 
 
 def alumno_to_dict(alumno):
@@ -37,7 +29,7 @@ def alumno_to_dict(alumno):
         "matricula": alumno.matricula,
         "promedio": alumno.promedio
     }
-
+    
 def profesor_to_dict(profesor):
     return {
         "id": profesor.id,
@@ -46,8 +38,3 @@ def profesor_to_dict(profesor):
         "apellidos": profesor.apellidos, 
         "horasClase": profesor.horasClase
     }
-
-
-def actualizarID(id, lista):
-    for i in range(id-1,len(lista)):
-        lista[i].id = i + 1
