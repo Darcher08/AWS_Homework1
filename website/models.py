@@ -1,26 +1,27 @@
-class Alumno():
-    def __init__(self, id, nombres, apellidos, matricula, promedio):
-        self.id = id
-        self.nombres = nombres
-        self.apellidos = apellidos
-        self.matricula = matricula
-        self.promedio = promedio
+from flask_sqlalchemy import SQLAlchemy
+from . import db
 
-class Profesor():
-    def __init__(self, id, numeroEmpleado, nombres, apellidos, horasClase):
-        self.id = id
-        self.numeroEmpleado = numeroEmpleado
-        self.nombres = nombres
-        self.apellidos = apellidos
-        self.horasClase = horasClase
+# Definir los modelos
+class Alumno(db.Model):
+    __tablename__ = 'Alumno'
+    id = db.Column(db.Integer, primary_key=True)
+    nombres = db.Column(db.String(150))
+    apellidos = db.Column(db.String(150))
+    matricula = db.Column(db.String(150), unique=True)
+    promedio = db.Column(db.Float)
+
+class Profesor(db.Model):
+    __tablename__ = 'Profesor'
+    id = db.Column(db.Integer, primary_key=True)
+    numeroEmpleado = db.Column(db.String(150), unique=True)
+    nombres = db.Column(db.String(150))
+    apellidos = db.Column(db.String(150))
+    horasClase = db.Column(db.Integer)
 
 
 alumnos = []
-
-
 profesores = []
-
-
+ 
 def alumno_to_dict(alumno):
     return {
         "id": alumno.id,

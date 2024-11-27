@@ -1,0 +1,1 @@
+credencial = 'mysql+pymysql://admin:Aaggh5kj7@flaskappdb.c21fjnvngsvf.us-east-1.rds.amazonaws.com.amazonaws.com:3306/flaskappdb'
