@@ -1,1 +1,3 @@
 credenciales.py
+__pycache_
+*.pyc
