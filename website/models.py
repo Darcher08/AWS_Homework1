@@ -7,8 +7,10 @@ class Alumno(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nombres = db.Column(db.String(150))
     apellidos = db.Column(db.String(150))
-    matricula = db.Column(db.String(150), unique=True)
+    matricula = db.Column(db.String(45), unique=True)
     promedio = db.Column(db.Float)
+    password = db.Column(db.String(45))
+    fotoPerfilUrl = db.Column(db.String(150))
 
 class Profesor(db.Model):
     __tablename__ = 'Profesor'
@@ -28,7 +30,9 @@ def alumno_to_dict(alumno):
         "nombres": alumno.nombres,
         "apellidos": alumno.apellidos,
         "matricula": alumno.matricula,
-        "promedio": alumno.promedio
+        "promedio": alumno.promedio,
+        "fotoPerfilUrl": alumno.fotoPerfilUrl,
+        "password": alumno.password
     }
     
 def profesor_to_dict(profesor):
